@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<div class="cabecera-seccion">
+    <h1>Lista de estudiantes</h1>
+    <input type="search" id="buscador" class="buscador" placeholder="Buscar por nombre o carrera...">
+</div>
+
+{% if estudiantes %}
+<div class="tabla-contenedor">
+    <table class="tabla" id="tabla-estudiantes">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Carrera</th>
+                <th>Semestre</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for estudiante in estudiantes %}
+            <tr>
+                <td>{{ estudiante.id }}</td>
+                <td>{{ estudiante.nombre }}</td>
+                <td>{{ estudiante.carrera }}</td>
+                <td>{{ estudiante.semestre }}.º</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<p class="nota" id="sin-resultados" hidden>No hay estudiantes que coincidan con la búsqueda.</p>
+<p class="nota">Total: {{ estudiantes | length }} estudiantes</p>
+{% else %}
+<p class="nota">Todavía no hay estudiantes registrados.</p>
+{% endif %}
+{% endblock %}

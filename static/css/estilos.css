@@ -1,0 +1,329 @@
+:root {
+    --primario: #2563eb;
+    --primario-oscuro: #1d4ed8;
+    --texto: #1f2937;
+    --texto-suave: #6b7280;
+    --fondo: #f3f4f6;
+    --blanco: #ffffff;
+    --borde: #e5e7eb;
+    --exito: #16a34a;
+    --error: #dc2626;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: var(--texto);
+    background: var(--fondo);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Encabezado y menú */
+.encabezado {
+    background: var(--blanco);
+    border-bottom: 1px solid var(--borde);
+}
+
+.encabezado__contenido {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--texto);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--primario);
+}
+
+.menu {
+    display: flex;
+    gap: 6px;
+}
+
+.menu a {
+    padding: 8px 14px;
+    border-radius: 8px;
+    color: var(--texto-suave);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.menu a:hover {
+    background: var(--fondo);
+    color: var(--texto);
+}
+
+.menu a.activo {
+    background: var(--primario);
+    color: var(--blanco);
+}
+
+/* Contenido principal */
+.principal {
+    flex: 1;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+h2 {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+}
+
+code {
+    background: #e0e7ff;
+    color: #3730a3;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.boton {
+    display: inline-block;
+    background: var(--primario);
+    color: var(--blanco);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background: var(--primario-oscuro);
+}
+
+/* Inicio */
+.hero {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 40px 32px;
+    margin-bottom: 24px;
+}
+
+.hero p {
+    color: var(--texto-suave);
+    max-width: 640px;
+    margin-bottom: 24px;
+}
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+.tarjeta {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.tarjeta p {
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+}
+
+.tarjeta__numero {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primario);
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+
+/* Estudiantes */
+.cabecera-seccion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.cabecera-seccion h1 {
+    margin-bottom: 0;
+}
+
+.buscador {
+    padding: 10px 14px;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    width: 100%;
+    max-width: 300px;
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+}
+
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla th,
+.tabla td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--borde);
+}
+
+.tabla th {
+    background: #f9fafb;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--texto-suave);
+}
+
+.tabla tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.tabla tbody tr:hover {
+    background: #f9fafb;
+}
+
+.nota {
+    color: var(--texto-suave);
+    margin-top: 12px;
+}
+
+/* Contacto */
+.contacto {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 24px;
+}
+
+.contacto__info,
+.contacto__formulario {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.contacto__info p {
+    color: var(--texto-suave);
+    margin-bottom: 16px;
+}
+
+.contacto__info ul {
+    list-style: none;
+    display: grid;
+    gap: 8px;
+}
+
+.contacto__formulario form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacto__formulario label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+}
+
+.contacto__formulario input,
+.contacto__formulario textarea {
+    padding: 10px 12px;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    margin-bottom: 16px;
+}
+
+.contacto__formulario input:focus,
+.contacto__formulario textarea:focus,
+.buscador:focus {
+    outline: 2px solid var(--primario);
+    outline-offset: 1px;
+}
+
+.alerta {
+    background: #dcfce7;
+    color: var(--exito);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.error {
+    color: var(--error);
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+/* Pie de página */
+.pie {
+    background: var(--blanco);
+    border-top: 1px solid var(--borde);
+    padding: 20px 0;
+    text-align: center;
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+}
+
+/* Celulares */
+@media (max-width: 700px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .hero {
+        padding: 28px 20px;
+    }
+
+    .contacto {
+        grid-template-columns: 1fr;
+    }
+
+    .buscador {
+        max-width: none;
+    }
+}
