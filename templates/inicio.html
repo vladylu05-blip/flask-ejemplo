@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<section class="hero">
+    <h1>Bienvenido a Flask</h1>
+    <p>Este proyecto muestra cómo una ruta de Flask devuelve una plantilla HTML usando <code>render_template</code> y cómo las plantillas comparten un diseño base con Jinja.</p>
+    <a href="{{ url_for('estudiantes') }}" class="boton">Ver estudiantes</a>
+</section>
+
+<section class="tarjetas">
+    <article class="tarjeta">
+        <span class="tarjeta__numero">{{ total_estudiantes }}</span>
+        <h2>Estudiantes registrados</h2>
+        <p>La lista se envía desde <code>app.py</code> y se recorre en la plantilla con un <code>for</code>.</p>
+    </article>
+    <article class="tarjeta">
+        <span class="tarjeta__numero">3</span>
+        <h2>Rutas</h2>
+        <p><code>/</code>, <code>/estudiantes</code> y <code>/contacto</code>, cada una con su propia vista.</p>
+    </article>
+    <article class="tarjeta">
+        <span class="tarjeta__numero">1</span>
+        <h2>Plantilla base</h2>
+        <p>El menú y el pie de página están en <code>base.html</code> y las demás páginas la heredan con <code>extends</code>.</p>
+    </article>
+</section>
+{% endblock %}

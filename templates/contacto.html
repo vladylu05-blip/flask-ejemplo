@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<h1>Página de contacto</h1>
+
+<div class="contacto">
+    <div class="contacto__info">
+        <h2>Escríbenos</h2>
+        <p>¿Tienes una consulta sobre el proyecto? Completa el formulario y te responderemos pronto.</p>
+        <ul>
+            <li><strong>Correo:</strong> contacto@ejemplo.com</li>
+            <li><strong>Teléfono:</strong> +591 70000000</li>
+            <li><strong>Horario:</strong> Lunes a viernes, 8:00 a 18:00</li>
+        </ul>
+    </div>
+
+    <div class="contacto__formulario">
+        {% if enviado %}
+        <div class="alerta">
+            ¡Gracias{% if nombre %}, {{ nombre }}{% endif %}! Recibimos tu mensaje.
+        </div>
+        {% endif %}
+
+        <form method="post" action="{{ url_for('contacto') }}" id="form-contacto" novalidate>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" required>
+
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+            <p class="error" id="error-formulario" hidden>Completa todos los campos con datos válidos.</p>
+
+            <button type="submit" class="boton">Enviar mensaje</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
